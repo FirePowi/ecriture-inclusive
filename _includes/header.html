@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>{{ site.name }} - {{ page.title }}</title>
+	<meta name="description" content="{{ page.description }}" />
+	<link rel="stylesheet" href="{{ site.basepath }}/style.css" type="text/css" media="screen" />
+	<meta property="og:site_name" content="{{ site.name }}" />
+	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:locale" content="fr_FR" />
+	<meta property="og:description" content="{{ page.description }}" />
+	<meta property="og:image" content="{{ site.url }}/images/preview-facebook.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="627" />
+	<meta property="og:url" content="{{ site.url }}/{{ page.permalink }}" />
+	<meta property="og:type" content="article" />
+</head>
+<body>
+
+<header>
+	<h1>L'écriture inclusive</h1>
+	<div id="headerExample"></div>
+</header>
+
+<script>
+examples = [
+	"<p>Les réalisatrices et les réalisateurs</p><p>Les réalisateur·rice·s</p><p>Les cinéastes</p>",
+	"<p>Les autrices et les auteurs</p><p>Les auteur·rice·s</p><p>Les essayistes</p>",
+	"<p>Les militants et les militantes</p><p>Les militant·e·s</p><p>Les camarades</p>"
+];
+lastExample = Math.floor(Math.random() * examples.length);
+
+function startNewExample()
+{
+	header = document.getElementById("headerExample");
+	if(header)
+	{
+		lastExample = (lastExample+1)%examples.length;
+		header.innerHTML = examples[lastExample];
+		header.style.opacity = 0;
+	}
+	window.setTimeout(finishNewExample, 100);
+};
+function finishNewExample()
+{
+	header = document.getElementById("headerExample");
+	if(header)
+	{
+		lastExample = (lastExample+1)%examples.length;
+		header.innerHTML = examples[lastExample];
+		header.style.opacity = 1;
+	}
+	window.setTimeout(endNewExample, 5000);
+};
+function endNewExample()
+{
+	header = document.getElementById("headerExample");
+	if(header)
+	{
+		header.style.opacity = 0;
+	}
+	window.setTimeout(startNewExample, 500);
+};
+
+startNewExample();
+</script>
+
+<div class="mainFrame">

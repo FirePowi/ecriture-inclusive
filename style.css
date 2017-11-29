@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda+One');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,800');
+
+body
+{
+	font-family: Merienda One;
+	color: #031335;
+	font-size: 90%;
+	margin: 0;
+}
+
+header
+{
+	text-align: center;
+}
+
+h1
+{
+	font-weight: normal;
+	font-size: 300%;
+}
+
+h2
+{
+	font-weight: normal;
+	text-align: center;
+	background-color: #031335;
+	color: white;
+	padding: 1.8em;
+	font-size: 180%;
+}
+
+#headerExample
+{
+	display: inline-block;
+	text-align: left;
+	border-left: 0.2em solid #031335;
+	padding-left: 0.75em;
+	transition: 0.5s;
+	opacity: 0;
+}
+#headerExample p
+{
+	margin: 0.25em;
+}
+
+footer
+{
+	text-align: center;
+	font-size: 80%;
+}
+
+.mainFrame
+{
+
+}
+
+.textBlock
+{
+	text-align: center;
+	width: 50em;
+	margin: 5em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em;
+}
+
+.questionReponseShadow1
+{
+	width: 50em;
+	margin: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	
+	position: relative;
+	left: 0.8em;
+	top: 0.8em;
+	
+	background-color: #8590a6;
+}
+
+@media screen and (max-width: 50em )
+{
+	.textBlock
+	{
+		width: calc(100% - 2em);
+	}
+	
+	.questionReponseShadow1
+	{
+		width: calc(100% - 4em);
+	}
+}
+
+.questionReponseShadow2
+{
+	position: relative;
+	left: -1.6em;
+	top: -1.6em;
+	
+	background-color: #8590a6;
+}
+
+.questionReponse
+{
+	position: relative;
+	left: 0.8em;
+	top: 0.8em;
+	
+	background-color: #031335;
+	color: white;
+	
+	padding: 1em;
+}
+
+.questionReponse h3
+{
+	text-align: center;
+	font-size: 120%;
+	margin: 0;
+}
+
+.questionReponse .question,
+.questionReponse .reponse
+{
+	display: table;
+	margin: 1.5em;
+}
+
+.questionReponse .text,
+.questionReponse .avatar
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.questionReponse img,
+.questionReponse img
+{
+	width: 7em;
+	height: 7em;
+	border-radius: 100%;
+	border: 0.35em solid white;
+}
+
+.questionReponse .question .text
+{
+	padding-left: 1em;
+}
+
+.questionReponse .reponse .text
+{
+	padding-right: 1em;
+	text-align: right;
+}
+
+
