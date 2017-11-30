@@ -1,17 +1,39 @@
 ---
 title: Accueil
-description: 
+description: Site pour découvrir l'écriture inclusive de façon ludique : exemples, quiz, FAQ et astuces d'écriture.
 layout: default
 permalink: 
 ---
 
+<script>
+$(document).ready(function() {
+	function setClassScrollSpeed(name, duration)
+	{
+		$(name).on('click', function() {
+			var page = $(this).attr('href');
+			var pos = $(page).offset().top;
+			$('html, body').animate( { scrollTop: pos }, duration ); // Go
+			return false;
+		});
+	}
+	
+	setClassScrollSpeed('.js-scroll-top-principe', 200);
+	setClassScrollSpeed('.js-scroll-top-questions', 400);
+	setClassScrollSpeed('.js-scroll-top-quiz', 600);
+	
+	setClassScrollSpeed('.js-scroll-principe-top', 200);
+	setClassScrollSpeed('.js-scroll-questions-top', 400);
+	setClassScrollSpeed('.js-scroll-quiz-top', 600);
+});
+</script>
+
 <ul class="menu">
-	<li><a href="#principe"><img src="{{ site.basepath }}images/epicene-lecture.png" alt="Le principe"/><br/>Le principe</a></li>
-	<li><a href="#questions"><img src="{{ site.basepath }}images/epicene-question.png" alt="Questions / Réponses"/><br/>Questions / Réponses</a></li>
-	<li><a href="#quizz"><img src="{{ site.basepath }}images/epicene-quizz.png" alt="Essayer le quizz"/><br/>Essayer le quizz</a></li>
+	<li><a class="js-scroll-top-principe" href="#principe"><img src="{{ site.basepath }}images/epicene-lecture.png" alt="Le principe"/><br/>Le principe</a></li>
+	<li><a class="js-scroll-top-questions" href="#questions"><img src="{{ site.basepath }}images/epicene-question.png" alt="Questions / Réponses"/><br/>Questions / Réponses</a></li>
+	<li><a class="js-scroll-top-quiz" href="#quiz"><img src="{{ site.basepath }}images/epicene-quizz.png" alt="Essayer le quiz"/><br/>Essayer le quiz</a></li>
 </ul>
 
-<h2 id="principe">Le principe</h2>
+<h2 id="principe">Le principe <a class="titleButton js-scroll-principe-top" href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></h2>
 
 <div class="textBlock">
 <p>L'écriture inclusive vise à remplacer toute utilisation du masculin comme genre neutre lorsque l'on désigne des personnes, ainsi que l'utilisation de formulations sous-entendant une inégalité entre les femmes et les hommes. On parle aussi de langage non-sexiste. Ça vous semble abstrait ? Regardez plutôt :</p>
@@ -25,7 +47,7 @@ permalink:
 <p>Et voilà ! Cette phrase est maintenant inclusive. Notez que « regroupées » prend un « e » car l'on a appliqué la règle de proximité. Mais nous allons voir ça en détail.</p>
 </div>
 
-<h2 id="questions">Questions / Réponses</h2>
+<h2 id="questions">Questions / Réponses <a class="js-scroll-questions-top titleButton" href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></h2>
 
 <div class="textBlock">
 	<p>L'écriture inclusive soulève beaucoup d'interrogations. Voici une petite sélection de questions / réponses pour dissiper vos doutes.</p>
@@ -67,4 +89,4 @@ permalink:
 	rtext="C'est dommage, tu viens justement de l'utiliser ! De plus, l'écriture inclusive n'est pas interdite, elle est simplement déconseillée pour certains documents administratifs. Même les cartes d'identité françaises utilisent l'écriture inclusive : « Né(e) le » par exemple."
 %}
 
-<h2 id="quizz">Quizz</h2>
+<h2 id="quiz">Quiz <a class="js-scroll-quiz-top titleButton" href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></h2>
