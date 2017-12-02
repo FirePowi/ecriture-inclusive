@@ -46,6 +46,13 @@ h2
 	font-size: 180%;
 }
 
+h3
+{
+	margin-top: 2.6em;
+	margin-bottom: 1.8em;
+	border-bottom: 1px solid #031335;
+}
+
 a.titleButton
 {
 	padding-left: 1.5em;
@@ -131,7 +138,7 @@ footer
 
 .menu li img
 {
-	width: 13em;
+	height: 13em;
 	-o-transition:.3s;
 	-ms-transition:.3s;
 	-moz-transition:.3s;
@@ -142,6 +149,14 @@ footer
 .menu li img:hover
 {
 	transform: rotate(-4deg) scale(1.1, 1.1) translate(0em, -1em) ;
+}
+
+img.illustration
+{
+	display: block;
+	height: 13em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .questionReponseShadow1
@@ -156,19 +171,6 @@ footer
 	top: 0.8em;
 	
 	background-color: #8590a6;
-}
-
-@media screen and (max-width: 50em )
-{
-	.textBlock
-	{
-		width: calc(100% - 2em);
-	}
-	
-	.questionReponseShadow1
-	{
-		width: calc(100% - 4em);
-	}
 }
 
 .questionReponseShadow2
@@ -231,6 +233,49 @@ footer
 {
 	padding-right: 1em;
 	text-align: right;
+}
+
+@media screen and (max-width: 50em )
+{
+	.textBlock
+	{
+		width: calc(100% - 2em);
+	}
+	
+	.questionReponseShadow1
+	{
+		width: calc(100% - 4em);
+	}
+}
+
+@media screen and (max-width: 35em )
+{
+	.questionReponse .question,
+	.questionReponse .reponse,
+	.questionReponse .text,
+	.questionReponse .avatar
+	{
+		display: block;
+	}
+	
+	.questionReponse .avatar
+	{
+		text-align: center;
+	}
+	
+	.questionReponse .question .text,
+	.questionReponse .reponse .text
+	{
+		text-align: left;
+		padding-left: 0em;
+		padding-right: 0em;
+	}
+	
+	.questionReponse .reponse .text
+	{
+		border-top: 1px solid white;
+		padding-top: 1.2em;
+	}
 }
 
 
