@@ -105,13 +105,39 @@ footer
 	font-family: Montserrat;
 }
 
-.textBlock .quote
+
+.textBlock .quote,
+.textBlock .spellcheck
 {
 	text-align: center;
-	font-family: Merienda One;
-	background-color: #BBC1CD;
 	padding: 2em;
 	margin: 2em;
+}
+
+.textBlock .quote
+{
+	font-family: Merienda One;
+	background-color: #BBC1CD;
+}
+
+.textBlock .spellcheck
+{
+	font-family: Montserrat;
+	background-color: white;
+	border: 1px solid #cccccc;
+}
+
+.spellcheck .spellGood
+{
+	color: #2C671D;
+}
+.spellcheck .spellBad
+{
+	color: #410002;
+}
+.spellcheck .spellDetection
+{
+	border-bottom: 0.2em solid red;
 }
 
 .menu,
