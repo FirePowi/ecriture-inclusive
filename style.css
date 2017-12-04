@@ -300,4 +300,17 @@ img.illustration
 	}
 }
 
+.key
+{
+	font-family: mono;
+	background-color: #cccccc;
+	padding: 0.2em;
+	margin: -0.2em;
+	border-radius:0.2em;
+}
+
+.keyList li
+{
+	margin-bottom: 1em;
+}
 
