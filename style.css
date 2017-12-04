@@ -97,7 +97,7 @@ footer
 .textBlock
 {
 	width: 50em;
-	margin: 5em;
+	margin: 3em;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1em;
@@ -114,7 +114,8 @@ footer
 	margin: 2em;
 }
 
-.menu
+.menu,
+.submenu
 {
 	margin: 0;
 	margin-top: 7em;
@@ -124,7 +125,8 @@ footer
 	text-align: center;
 }
 
-.menu li
+.menu li,
+.submenu li
 {
 	margin: 0;
 	padding: 0;
@@ -132,15 +134,22 @@ footer
 	text-align: center;
 }
 
-.menu a
+.submenu li
+{
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+.menu a,
+.submenu a
 {
 	text-decoration: none;
 	color: #031335;
 }
 
-.menu li img
+.menu li img,
+.submenu li img
 {
-	height: 13em;
 	-o-transition:.3s;
 	-ms-transition:.3s;
 	-moz-transition:.3s;
@@ -148,7 +157,18 @@ footer
 	transition: .3s;
 }
 
-.menu li img:hover
+.menu li img
+{
+	height: 13em;
+}
+
+.submenu li img
+{
+	height: 9em;
+}
+
+.menu li img:hover,
+.submenu li img:hover
 {
 	transform: rotate(-4deg) scale(1.1, 1.1) translate(0em, -1em) ;
 }
