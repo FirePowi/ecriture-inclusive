@@ -29,9 +29,12 @@
 
 <script>
 examples = [
+	"<p>Des cheffes ou des chefs</p><p>Des chef·fe·s</p><p>Des responsables</p>",
 	"<p>Les réalisatrices et les réalisateurs</p><p>Les réalisateur·rice·s</p><p>Les cinéastes</p>",
+	"<p>Un conjoint ou une conjointe</p><p>Un·e conjoint·e</p><p>Un partenaire</p>",
 	"<p>Les autrices et les auteurs</p><p>Les auteur·rice·s</p><p>Les essayistes</p>",
-	"<p>Les militants et les militantes</p><p>Les militant·e·s</p><p>Les camarades</p>"
+	"<p>Des écoliers et des écolières</p><p>Des écolier·ère·s</p><p>Des élèves</p>",
+	"<p>Celles et ceux qui sont là</p><p>Celle·eux qui sont là</p><p>Les personnes qui sont là</p>"
 ];
 lastExample = Math.floor(Math.random() * examples.length);
 
@@ -51,7 +54,6 @@ function finishNewExample()
 	header = document.getElementById("headerExample");
 	if(header)
 	{
-		lastExample = (lastExample+1)%examples.length;
 		header.innerHTML = examples[lastExample];
 		header.style.opacity = 1;
 	}
