@@ -152,33 +152,36 @@ $(document).ready(function() {
 	<form id="main-form" cf-form class="main-form" cf-prevent-autofocus>
 		<input name="first-answer" type="text" cf-questions="Bonjour && Je suis Épicène, le point médian" />
 
-		<fieldset cf-questions="Es tu prêt à démarrer un quizz sur l'écriture inclusive ?">
-			<input type="radio" name="cfc-test" id="test-yes" value="yes">
-			<label for="test-yes">Oui</label>
-			<input type="radio" name="cfc-test" id="test-absolutely" value="yes">
-			<label for="test-absolutely">Absolument</label>
-			<input type="radio" name="cfc-test" id="test-chef" value="no">
-			<label for="test-chef">Chef, oui chef</label>
+		<!-- Quiz Block - Start -->
+		<fieldset cf-questions="Es tu prêt à démarrer un quiz sur l'écriture inclusive ?">
+			<input type="radio" name="cfc-start" id="start-yes" value="true1">
+			<label for="start-yes">Oui</label>
+			<input type="radio" name="cfc-start" id="start-absolutely" value="true2">
+			<label for="start-absolutely">Absolument</label>
+			<input type="radio" name="cfc-start" id="start-chef" value="false">
+			<label for="start-chef">Chef, oui chef</label>
 		</fieldset>
 
-		<!-- path no -->
+			<!-- Answer : Mégenré -->
+		<input type="text" cf-questions="Cheffe ou chef :D ? Attention à l'avenir, ok ?" cf-conditional-cfc-start="false" />
 
-		<input type="text" cf-questions="Attention, chef n'est pas un épicène && Attention à l'avenir ok ?" cf-conditional-cfc-test="no" />
+		<!-- Quiz Block - Simple -->
 
-		<!-- path yes -->
-
-		<fieldset cf-questions="Allons y && Quelle est la bonne écriture inclusive de : && Ils sont partis chassés">
-			<input type="radio" name="cfc-first" id="first-male" value="no">
-			<label for="first-male">Cette phrase est déjà inclusive</label>
-			<input type="radio" name="cfc-first" id="first-correct" value="yes">
-			<label for="first-correct">Iels sont parti·e·s chassé·e·s</label>
-			<input type="radio" name="cfc-first" id="first-female" value="no">
-			<label for="first-female">Elles sont parties chasser</label>
+		<fieldset cf-questions="Allons y && Quelle est la bonne écriture inclusive de : && « Les adhérents sont ici »">
+			<input type="radio" name="cfc-simple" id="simple-male" value="false-h">
+			<label for="simple-male">Cette phrase est déjà inclusive</label>
+			<input type="radio" name="cfc-simple" id="simple-correct" value="true">
+			<label for="simple-correct">Les adhérent·e·s sont ici</label>
+			<input type="radio" name="cfc-simple" id="simple-female" value="false-f">
+			<label for="simple-female">Les adhérentes sont ici</label>
 		</fieldset>
-
-		<!-- path yes -->
-
-		<input type="text" cf-questions="Bien joué o/" cf-conditional-cfc-first="yes" />
+		
+			<!-- Answer : Masculin -->
+		<input type="text" cf-questions="Non, cette phrase n'est pas inclusive car « adhérents » ne visiblise pas les femmes && « Les adhérent·e·s sont ici » est en revanche une forme inclusive" cf-conditional-cfc-simple="false-h" />
+			<!-- Answer : Féminin -->
+		<input type="text" cf-questions="Non, le but de l'écriture inclusive n'est pas de remplacer le masculin par le féminin, mais de rendre visible les hommes ET les femmes && « Les adhérent·e·s sont ici » est en revanche une forme inclusive" cf-conditional-cfc-simple="false-f" />
+			<!-- Answer : Féminin -->
+		<input type="text" cf-questions="Exactement !" cf-conditional-cfc-simple="true" />
 
 	</form>
 </div>

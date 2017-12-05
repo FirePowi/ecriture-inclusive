@@ -4,18 +4,40 @@
 cf-chat-response.robot text .show {
     font-size:18px;
     background-color: #031335;
-    font-family: Merienda One;
+    font-family: Montserrat;
     color: white;
     margin-left: 20px;
-    border-radius: 20px 20px 20px 20px;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+cf-chat-response.robot text .show:first-child {
+    border-top-left-radius: 1em;
+}
+
+cf-chat-response.robot text .show:last-child {
+    border-bottom-left-radius: 1em;
 }
 
 cf-chat-response.user text .show {
     font-size:18px;
     background-color: #031335;
-    font-family: Merienda One;
+    font-family: Montserrat;
     color: white;
-    border-radius: 20px 20px 20px 20px;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+cf-chat-response.user text .show:first-child {
+    border-top-right-radius: 1em;
+}
+
+cf-chat-response.user text .show:last-child {
+    border-bottom-right-radius: 1em;
 }
 
 
