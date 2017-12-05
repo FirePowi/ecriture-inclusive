@@ -7,6 +7,19 @@ permalink:
 
 <script>
 $(document).ready(function() {
+	function change() {
+		if($( ".robot thumb").css('background-image') != "url('{{ site.basepath }}images/avatar-epicene.png')"){
+			$( ".robot thumb").css('background-image',"url('{{ site.basepath }}images/avatar-epicene.png')");
+		}
+
+		if($( ".user thumb").css('background-image') != ""){
+			$( ".user thumb").css('background-image',"");
+		}
+	}
+	function checkDOMChange() {
+    	change();
+    	setTimeout(checkDOMChange, 100);
+	}
 	function setClassScrollSpeed(name, duration)
 	{
 		$(name).on('click', function() {
@@ -16,6 +29,8 @@ $(document).ready(function() {
 			return false;
 		});
 	}
+
+	checkDOMChange();
 	
 	setClassScrollSpeed('.js-scroll-top-principe', 600);
 	setClassScrollSpeed('.js-scroll-top-questions', 800);
@@ -133,6 +148,40 @@ $(document).ready(function() {
 %}
 
 <h2 id="quiz">Quiz <a class="js-scroll-quiz-top titleButton" href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></h2>
+<div class="section-form" cf-context id="form-container">	
+	<form id="main-form" cf-form class="main-form" cf-prevent-autofocus>
+		<input name="first-answer" type="text" cf-questions="Bonjour && Je suis Épicène, le point médian" />
+
+		<fieldset cf-questions="Es tu prêt à démarrer un quizz sur l'écriture inclusive ?">
+			<input type="radio" name="cfc-test" id="test-yes" value="yes">
+			<label for="test-yes">Oui</label>
+			<input type="radio" name="cfc-test" id="test-absolutely" value="yes">
+			<label for="test-absolutely">Absolument</label>
+			<input type="radio" name="cfc-test" id="test-chef" value="no">
+			<label for="test-chef">Chef, oui chef</label>
+		</fieldset>
+
+		<!-- path no -->
+
+		<input type="text" cf-questions="Attention, chef n'est pas un épicène && Attention à l'avenir ok ?" cf-conditional-cfc-test="no" />
+
+		<!-- path yes -->
+
+		<fieldset cf-questions="Allons y && Quelle est la bonne écriture inclusive de : && Ils sont partis chassés">
+			<input type="radio" name="cfc-first" id="first-male" value="no">
+			<label for="first-male">Cette phrase est déjà inclusive</label>
+			<input type="radio" name="cfc-first" id="first-correct" value="yes">
+			<label for="first-correct">Iels sont parti·e·s chassé·e·s</label>
+			<input type="radio" name="cfc-first" id="first-female" value="no">
+			<label for="first-female">Elles sont parties chasser</label>
+		</fieldset>
+
+		<!-- path yes -->
+
+		<input type="text" cf-questions="Bien joué o/" cf-conditional-cfc-first="yes" />
+
+	</form>
+</div>
 
 <img class="illustration" src="{{ site.basepath }}images/epicene-quiz.png" alt="Épicène le point médian joue" />
 

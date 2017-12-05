@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda+One');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,800');
+
+cf-chat-response.robot text .show {
+    font-size:18px;
+    background-color: #031335;
+    font-family: Merienda One;
+    color: white;
+    margin-left: 20px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+cf-chat-response.user text .show {
+    font-size:18px;
+    background-color: #031335;
+    font-family: Merienda One;
+    color: white;
+    border-radius: 20px 20px 20px 20px;
+}
+
+
+cf-chat-response.robot thumb{
+    width: 48px;
+    height: 60px;
+}
+
+cf-chat-response.user thumb{
+    width: 48px;
+    height: 48px;
+}
+.cf-button > div{
+    color: #031335;
+    font-size: 15px;
+}
+
+.section-form{
+    height: 60vh;
+    width: 80%;
+    margin-left: 10%;
+}
