@@ -7,6 +7,19 @@ permalink:
 
 <script>
 $(document).ready(function() {
+	function change() {
+		if($( ".robot thumb").css('background-image') != "url('{{ site.basepath }}images/avatar-epicene.png')"){
+			$( ".robot thumb").css('background-image',"url('{{ site.basepath }}images/avatar-epicene.png')");
+		}
+
+		if($( ".user thumb").css('background-image') != ""){
+			$( ".user thumb").css('background-image',"");
+		}
+	}
+	function checkDOMChange() {
+    	change();
+    	setTimeout(checkDOMChange, 100);
+	}
 	function setClassScrollSpeed(name, duration)
 	{
 		$(name).on('click', function() {
@@ -16,6 +29,8 @@ $(document).ready(function() {
 			return false;
 		});
 	}
+
+	checkDOMChange();
 	
 	setClassScrollSpeed('.js-scroll-top-principe', 600);
 	setClassScrollSpeed('.js-scroll-top-questions', 800);
@@ -133,6 +148,43 @@ $(document).ready(function() {
 %}
 
 <h2 id="quiz">Quiz <a class="js-scroll-quiz-top titleButton" href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a></h2>
+<div class="section-form" cf-context id="form-container">	
+	<form id="main-form" cf-form class="main-form" cf-prevent-autofocus>
+		<input name="first-answer" type="text" cf-questions="Bonjour && Je suis Épicène, le point médian" />
+
+		<!-- Quiz Block - Start -->
+		<fieldset cf-questions="Es tu prêt à démarrer un quiz sur l'écriture inclusive ?">
+			<input type="radio" name="cfc-start" id="start-yes" value="true1">
+			<label for="start-yes">Oui</label>
+			<input type="radio" name="cfc-start" id="start-absolutely" value="true2">
+			<label for="start-absolutely">Absolument</label>
+			<input type="radio" name="cfc-start" id="start-chef" value="false">
+			<label for="start-chef">Chef, oui chef</label>
+		</fieldset>
+
+			<!-- Answer : Mégenré -->
+		<input type="text" cf-questions="Cheffe ou chef :D ? Attention à l'avenir, ok ?" cf-conditional-cfc-start="false" />
+
+		<!-- Quiz Block - Simple -->
+
+		<fieldset cf-questions="Allons y && Quelle est la bonne écriture inclusive de : && « Les adhérents sont ici »">
+			<input type="radio" name="cfc-simple" id="simple-male" value="false-h">
+			<label for="simple-male">Cette phrase est déjà inclusive</label>
+			<input type="radio" name="cfc-simple" id="simple-correct" value="true">
+			<label for="simple-correct">Les adhérent·e·s sont ici</label>
+			<input type="radio" name="cfc-simple" id="simple-female" value="false-f">
+			<label for="simple-female">Les adhérentes sont ici</label>
+		</fieldset>
+		
+			<!-- Answer : Masculin -->
+		<input type="text" cf-questions="Non, cette phrase n'est pas inclusive car « adhérents » ne visiblise pas les femmes && « Les adhérent·e·s sont ici » est en revanche une forme inclusive" cf-conditional-cfc-simple="false-h" />
+			<!-- Answer : Féminin -->
+		<input type="text" cf-questions="Non, le but de l'écriture inclusive n'est pas de remplacer le masculin par le féminin, mais de rendre visible les hommes ET les femmes && « Les adhérent·e·s sont ici » est en revanche une forme inclusive" cf-conditional-cfc-simple="false-f" />
+			<!-- Answer : Féminin -->
+		<input type="text" cf-questions="Exactement !" cf-conditional-cfc-simple="true" />
+
+	</form>
+</div>
 
 <img class="illustration" src="{{ site.basepath }}images/epicene-quiz.png" alt="Épicène le point médian joue" />
 
