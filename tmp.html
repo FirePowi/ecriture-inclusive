@@ -1,0 +1,35 @@
+---
+title: Accueil
+description: "Site pour découvrir l'écriture inclusive de façon ludique : exemples, quiz, FAQ et astuces d'écriture."
+layout: default
+permalink: /
+---
+
+<div class="textBlock">
+
+<div class="loading">
+<img src="{{ site.basepath }}images/loading-background.png" alt="Chargement background" /><img src="{{ site.basepath }}images/loading-foreground.png" alt="Chargement foreground" />
+</div>
+
+<p class="loadingMsg">Bientôt disponible...</p>
+
+<script>
+function animLeft()
+{
+	$(".loading img:first-child").css({'transform': 'translate(10em)'});
+	$(".loading img:last-child").css({'transform': 'translate(10em) rotate(40deg)'});
+	
+	window.setTimeout(animRight, 2000);
+}
+function animRight()
+{
+	$(".loading img:first-child").css({'transform': 'translate(-10em)'});
+	$(".loading img:last-child").css({'transform': 'translate(-10em) rotate(-40deg)'});
+	
+	window.setTimeout(animLeft, 2000);
+}
+
+window.setTimeout(animLeft, 1000);
+</script>
+
+</div>
