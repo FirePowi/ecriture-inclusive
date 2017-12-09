@@ -1,0 +1,21 @@
+{
+	"options": {
+		"preventAutoAppend": true,
+		"preventAutoFocus": true
+	},
+	"tags": [
+		{
+			"tag": "input",
+			"type": "text",
+			"id": "cf-hello",
+			"value": "Bonjour",
+			"cf-questions": "Bonjour&&Je m'appelle Épicène"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"id": "cf-end",
+			"cf-questions": "Merci de ta participation !"
+		}
+	]
+}

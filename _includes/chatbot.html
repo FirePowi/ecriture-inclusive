@@ -1,0 +1,103 @@
+<div id="quiz-chat" role="cf-context"></div>
+
+<script>
+var conversationalForm;
+
+// check formless.json
+var onFormlessSubmitted = function(cf)
+{
+	console.log("DONE!");
+}
+
+var onStepCallback = function(dto, success, error)
+{
+	console.log(dto);
+	if(dto.tag.id == "cf-hello")
+	{
+		tags = [
+			{
+				"tag": "input",
+				"type": "text",
+				"id": "cf-pm0",
+				"cf-questions": "Essaye d'écrire un point médian (·)"
+			}
+		];
+		
+		conversationalForm.addTags(tags, true);
+		
+		success();
+	}
+	else if(dto.tag.id == "cf-pm0")
+	{
+		if(dto.text == "·")
+		{
+			conversationalForm.addRobotChatResponse("Super, on va pouvoir continuer.");
+			tags = [
+				{
+					"tag": "input",
+					"type": "text",
+					"id": "cf-pm1",
+					"value": "Militant",
+					"cf-questions": "Essaye de rendre le mot « Militant » inclusif à l'aide de points médians"
+				}
+			];
+			
+			conversationalForm.addTags(tags, true);
+			
+			success();
+		}
+		else
+		{
+			error();
+		}
+	}
+	else if(dto.tag.id == "cf-pm1")
+	{
+		if(dto.text == "Militant·e")
+		{
+			conversationalForm.addRobotChatResponse("Exactement");
+		}
+		else
+		{
+			conversationalForm.addRobotChatResponse("Non, une réponse inclusive serait plutôt « Militant·e »");
+		}
+		
+		tags = [
+			{
+				"tag": "input",
+				"type": "text",
+				"id": "cf-pm2",
+				"value": "Boulanger",
+				"cf-questions": "Essaye maintenant avec « Boulanger »"
+			}
+		];
+		
+		conversationalForm.addTags(tags, true);
+		
+		success();
+	}
+}
+
+// load json file with formless data (files/formless.json)
+window.onload = function()
+{
+	var xhr = new XMLHttpRequest()
+	xhr.onload = function(event)
+	{
+		var str = xhr.response;
+		var json = JSON.parse(str);
+		
+		json.options.submitCallback = onFormlessSubmitted.bind(window);
+		json.options.flowStepCallback = onStepCallback.bind(window);
+		json.options.robotImage = "{{site.basepath}}images/avatar-epicene.png";
+		json.options.userImage = "/";
+		
+		// start one w. json
+		conversationalForm = window.cf.ConversationalForm.startTheConversation(json);
+		document.getElementById("quiz-chat").appendChild(conversationalForm.el);
+	}
+	xhr.open("GET", "{{site.basepath}}chatbot.json");
+	xhr.send();
+};
+
+</script>
